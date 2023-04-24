@@ -8,7 +8,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
 import java.util.Set;
 
-@Path("/prices")
+@Path("/price")
 @RegisterRestClient
 public interface PriceService {
 
@@ -16,6 +16,6 @@ public interface PriceService {
     Price getRandom();
 
     @GET
-    @Path("prices/{id}")
+    @Path("price/{id}")
     Set<Price> getById(@PathParam("id") String id);
 }

@@ -1,6 +1,7 @@
 package com.combi;
 
 import com.combi.model.PriceQuota;
+import io.quarkus.logging.Log;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -13,14 +14,16 @@ public class ProductPriceResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public PriceQuota price() {
+        Log.infof("Received price request");
         int min=0;
         int max=199;
 
         PriceQuota p=new PriceQuota();
         p.setDescription("Price description0");
         p.setItemId(0L);
-        p.setItemName("test item");
+        p.setItemName("Test item");
         p.setPrice( Math.floor(Math.random() *(max - min + 1) + min));
+        Log.infof("price request for "+p.getDescription());
         return p;
     }
 }

@@ -20,6 +20,7 @@ public class QuoteResource {
 
 
     @GET
+    @Produces(MediaType.APPLICATION_JSON)
     public Quote getRandomQuote(){
         Quote q =new Quote();
 
