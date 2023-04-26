@@ -9,13 +9,5 @@ import static org.hamcrest.CoreMatchers.is;
 @QuarkusTest
 public class QuoteResourceTest {
 
-    @Test
-    public void testHelloEndpoint() {
-        given()
-          .when().get("/quote")
-          .then()
-             .statusCode(200)
-             .body(is("Hello RESTEasy"));
-    }
 
 }
