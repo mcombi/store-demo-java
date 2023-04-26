@@ -4,6 +4,7 @@ import com.combi.model.Quote;
 import com.combi.rest.client.Price;
 import com.combi.rest.client.PriceService;
 import com.oracle.svm.core.annotate.Inject;
+import io.quarkus.logging.Log;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import javax.ws.rs.GET;
@@ -22,6 +23,7 @@ public class QuoteResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Quote getRandomQuote(){
+        Log.infof("Received quote request");
         Quote q =new Quote();
 
         Price p = pricesService.getRandom();
